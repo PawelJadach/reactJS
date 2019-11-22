@@ -7,7 +7,7 @@ class List extends Component {
     render() { 
         return ( 
             <section className={styles.component}>
-                <Hero />
+                <Hero titleText={this.props.title}/>
             </section>
          );
     }
