@@ -40,6 +40,7 @@ class List extends Component {
   }
 
   render() {
+    console.log(this.state.columns);
     return (
       <section className={styles.component}>
         <Hero titleText={this.props.title} img={this.props.image} />
