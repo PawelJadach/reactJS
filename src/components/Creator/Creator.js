@@ -5,19 +5,19 @@ import PropTypes from 'prop-types';
 
 class Creator extends React.Component {
   static propTypes = {
-    text: PropTypes.string,
-  }
+    text: PropTypes.string
+  };
 
   static defaultProps = {
-    text: 'Add new item',
-  }
+    text: 'Add new item'
+  };
 
   state = {
     value: '',
-    visibleButtons: false,
-  }
+    visibleButtons: false
+  };
 
-  handleChange(event){
+  handleChange(event) {
     // console.log(event);
     this.setState({
       value: event.target.value,
@@ -25,8 +25,8 @@ class Creator extends React.Component {
     });
   }
 
-  handleOK(){
-    if(this.state.value != ''){
+  handleOK() {
+    if (this.state.value != '') {
       this.props.action(this.state.value);
       this.setState({
         value: '',
@@ -35,11 +35,13 @@ class Creator extends React.Component {
     }
   }
 
-  handleCancel(){
-    this.setState({
-      value: '',
-      visibleButtons: false
-    });
+  handleCancel() {
+    if (window.confirm('Do you really want to cancel?')) {
+      this.setState({
+        value: '',
+        visibleButtons: false
+      });
+    }
   }
 
   render() {
@@ -51,9 +53,16 @@ class Creator extends React.Component {
           value={this.state.value}
           onChange={event => this.handleChange(event)}
         />
-        <div className={styles.buttons + (this.state.visibleButtons ? ' ' + styles.buttonsShown : '')}>
+        <div
+          className={
+            styles.buttons +
+            (this.state.visibleButtons ? ' ' + styles.buttonsShown : '')
+          }
+        >
           <Button onClick={() => this.handleOK()}>OK</Button>
-          <Button onClick={() => this.handleCancel()} variant='danger'>cancel</Button>
+          <Button onClick={() => this.handleCancel()} variant='blue'>
+            cancel
+          </Button>
         </div>
       </div>
     );
