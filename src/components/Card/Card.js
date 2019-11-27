@@ -4,7 +4,7 @@ import styles from './Card.scss';
 
 const Card = props => {
   Card.propTypes = {
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
   };
 
   return (

@@ -12,15 +12,15 @@ class List extends Component {
     title: PropTypes.node.isRequired,
     description: PropTypes.node,
     columns: PropTypes.array,
-    image: PropTypes.string
+    image: PropTypes.string,
   };
 
   static defaultProps = {
-    description: settings.defaultListDescription
+    description: settings.defaultListDescription,
   };
 
   state = {
-    columns: this.props.columns || []
+    columns: this.props.columns || [],
   };
 
   addColumn(title) {
@@ -33,9 +33,9 @@ class List extends Component {
             : 0,
           title,
           icon: 'list-alt',
-          cards: []
-        }
-      ]
+          cards: [],
+        },
+      ],
     }));
   }
 

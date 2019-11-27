@@ -9,12 +9,13 @@ import { settings } from '../../data/dataStore';
 class Column extends Component {
   static propTypes = {
     title: PropTypes.string,
-    icon: PropTypes.node
+    icon: PropTypes.node,
+    cards: PropTypes.node,
   };
 
   state = {
     cards: this.props.cards || [],
-    icon: this.props.icon
+    icon: this.props.icon,
     // key: this.props.key
   };
 
@@ -26,9 +27,9 @@ class Column extends Component {
           key: state.cards.length
             ? state.cards[state.cards.length - 1].key + 1
             : 0,
-          title
-        }
-      ]
+          title,
+        },
+      ],
     }));
   }
 

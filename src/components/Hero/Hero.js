@@ -6,7 +6,7 @@ import ReactHtmlParser from 'react-html-parser';
 const Hero = props => {
   Hero.propTypes = {
     titleText: PropTypes.node.isRequired,
-    img: PropTypes.string
+    img: PropTypes.string,
   };
 
   return (
