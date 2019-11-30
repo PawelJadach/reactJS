@@ -3,7 +3,7 @@ import styles from './Search.scss';
 import Button from '../Button/Button';
 import PropTypes from 'prop-types';
 import { settings } from '../../data/dataStore';
-import Icon from '../Icon/Icon';
+import Icon from '../Icon';
 
 class Search extends React.Component {
   static propTypes = {
@@ -27,9 +27,11 @@ class Search extends React.Component {
       value: event.target.value,
       visibleButtons: event.target.value.length > 0,
     });
+
   }
 
   handleOK(){
+    // console.log(this.state.value);
     this.props.changeSearchString(this.state.value);
   }
 
