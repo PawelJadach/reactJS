@@ -1,30 +1,22 @@
-import React from 'react';
-import styles from './App.scss';
-import List from '../List/ListContaner';
-import Search from '../Search/SearchContainer';
-import PropTypes from 'prop-types';
-// import Container from '../Container/Container';
+import React, { Component } from 'react';
+import Home from '../Home/HomeContainer';
+import Info from '../Info/Info';
+import MainLayout from '../MainLayout/MainLayout';
+import Faq from '../Faq/Faq';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-class App extends React.Component {
-  static propTypes = {
-    title: PropTypes.node,
-    subtitle: PropTypes.node,
-    lists: PropTypes.array,
-  }
-
+class App extends Component {
   render() {
-    const {title, subtitle, lists} = this.props;
     return (
-      <main className={styles.component}>
-        
-        <h1 className={styles.title}>{title}</h1>
-        <h2 className={styles.subtitle}>{subtitle}</h2>
-        <Search />
-        {lists.map(listData => (
-          <List key={listData.id} {...listData} />
-        ))}
-        
-      </main>
+      <BrowserRouter>
+        <MainLayout>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/info' component={Info} />
+            <Route exact path='/faq' component={Faq} />
+          </Switch>
+        </MainLayout>
+      </BrowserRouter>
     );
   }
 }

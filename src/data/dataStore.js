@@ -12,6 +12,40 @@ export const settings = {
   },
   defaultListDescription: '<p>I can do all the things!!!</p>',
   defaultColumnIcon: 'list-alt',
+  info: {
+    titleText: 'Informacje',
+    img:
+      'https://cdn.pixabay.com/photo/2012/08/25/22/22/space-54999_960_720.jpg',
+    h2: 'Info',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  },
+  faq: {
+    titleText: 'Najczęściej zadawane pytania',
+    img:
+      'https://cdn.pixabay.com/photo/2019/11/29/22/40/city-4662225_960_720.png',
+    h2: 'Faq',
+    content: {
+      question_1: {
+        question:
+          '1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta orci enim, vel euismod dolor ultricies condimentum.',
+        answer:
+          'Nunc sollicitudin quam eget lorem scelerisque pretium. Nunc pulvinar placerat velit, vel faucibus libero interdum a. Maecenas porttitor placerat mi, at auctor ante feugiat at.',
+      },
+      question_2: {
+        question:
+          '2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta orci enim, vel euismod dolor ultricies condimentum.',
+        answer:
+          'Nunc sollicitudin quam eget lorem scelerisque pretium. Nunc pulvinar placerat velit, vel faucibus libero interdum a. Maecenas porttitor placerat mi, at auctor ante feugiat at.',
+      },
+      question_3: {
+        question:
+          '3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta orci enim, vel euismod dolor ultricies condimentum.',
+        answer:
+          'Nunc sollicitudin quam eget lorem scelerisque pretium. Nunc pulvinar placerat velit, vel faucibus libero interdum a. Maecenas porttitor placerat mi, at auctor ante feugiat at.',
+      },
+    },
+  },
 };
 
 export const pageContents = {
@@ -142,7 +176,7 @@ const cards = [
 ];
 
 const initialStoreData = {
-  app: {...pageContents},
+  app: { ...pageContents },
   lists: [...lists],
   columns: [...columns],
   cards: [...cards],
