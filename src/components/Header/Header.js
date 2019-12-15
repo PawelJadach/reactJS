@@ -3,6 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 import styles from './Header.scss';
 
 import Container from '../Container/Container';
+import Search from '../Search/SearchContainer';
 
 class Header extends Component {
   state = {};
@@ -14,6 +15,7 @@ class Header extends Component {
             <Link to='/' className={styles.logo}>
               <i className='fab fa-adn'></i>
             </Link>
+            <Search />
             <nav>
               <NavLink exact to='/' activeClassName='active'>
                 Home
